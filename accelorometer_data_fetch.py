@@ -2,6 +2,7 @@
 
 import smbus
 import math
+import time
 
 # Power management registers
 power_mgmt_1 = 0x6b
@@ -73,6 +74,13 @@ address = 0x68       # This is the address value read via the i2cdetect command
 # Now wake the 6050 up as it starts in sleep mode
 bus.write_byte_data(address, power_mgmt_1, 0)
 
-while True:
+start_time = time.time()
+
+# ... do stuff
+
+
+for i in range(0,1000):
     get_and_print_accelorometer_data()
 
+end_time = time.time()
+print("Elapsed time was %g seconds" % (end_time - start_time))
