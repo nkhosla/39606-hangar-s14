@@ -11,7 +11,7 @@ class Accel:
         self.power_mgmt_2 = 0x6c
         # the 
         self.address = 0x68
-        self.bus - smbus.SMbus(1)
+        self.bus = smbus.SMbus(1)
 
     def wakeFromSleep(self):
         # Now wake the 6050 up as it starts in sleep mode
