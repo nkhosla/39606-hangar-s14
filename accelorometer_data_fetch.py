@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# below code from:
+# http://blog.bitify.co.uk/2013/11/reading-data-from-mpu-6050-on-raspberry.html
 import smbus
 import math
 import time
