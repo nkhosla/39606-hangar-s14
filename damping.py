@@ -9,7 +9,7 @@ accelorometer.wakeFromSleep()
 
 # Set up the PID control system
 
-pid = PID(P=1, I=1, D=1, Derivator=0, Integrator=0, Integrator=0, Integrator_max=50, Integrator_min=-50)
+pid = PID(P=1, I=1, D=1, Derivator=0, Integrator=0, Integrator_max=50, Integrator_min=-50)
 
 
 
