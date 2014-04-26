@@ -10,7 +10,7 @@ error = input 				\\just for nomenclature
 
 pControl = Kp*error			\\Multiply by fixed constant
 iControl = Ki*integral(error)		\\Account for accumulated error
-dControl = Kd*derivative(error)		\\Adjust for future error
+dControl = Kd*derivative(error)		\\Adjust for future error`
 
 
 rawOut = pControl + iControl + dControl \\Raw error adjustment output -> needs to be converted so motor can understand
