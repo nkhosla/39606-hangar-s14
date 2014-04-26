@@ -22,8 +22,8 @@ class Accel:
     # General methods for extracting the data from the register addresses
     
     def read_word(self, adr):
-        high = self.bus.read_byte_data(address, adr)
-        low = self.bus.read_byte_data(address, adr+1)
+        high = self.bus.read_byte_data(self.address, adr)
+        low = self.bus.read_byte_data(self.address, adr+1)
         val = (high << 8) + low
         return val
 
