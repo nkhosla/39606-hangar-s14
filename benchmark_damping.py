@@ -9,7 +9,7 @@ accelorometer = Accel()
 accelorometer.wakeFromSleep()
 
 
-startTimeForCalibration - time.time()
+startTimeForCalibration = time.time()
 numReadings = 0
 sumReadings= 0
 
