@@ -9,8 +9,18 @@ accelorometer.wakeFromSleep()
 
 
 start_time = time.time()
+
+# Set up the PID control system
+
+pid = PID(P=1, I=1, D=1, Derivator=0, Integrator=0, Integrator=0, Integrator_max=50, Integrator_min=-50)
+
+
 for i in range (0,1000):
-    print accelorometer.getReadingX()
+    r= accelorometer.getReadingX()
+    print r, pid.update(r)
+
+
+
 
 
 end_time = time.time()
