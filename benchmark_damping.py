@@ -18,7 +18,7 @@ while time.time() < (startTimeForCalibration+10.0):
     sumReadings += accelorometer.getReadingX()
 
 
-meanReading = sumReadings / numReadings
+meanReading = 0 - (sumReadings / numReadings)
 
 
 
@@ -31,7 +31,7 @@ pid = PID(P=1, I=1, D=1, Derivator=0, Integrator=0, Integrator_max=50, Integrato
 
 
 for i in range (0,1000):
-    r= accelorometer.getReadingX() - meanReading
+    r= accelorometer.getReadingX() + meanReading
     print r, pid.update(r)
 
 
