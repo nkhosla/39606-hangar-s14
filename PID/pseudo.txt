@@ -1,0 +1,21 @@
+PSEUDO CODE
+
+NOTE: PID controllers are designed to eliminate error of a desired parameter with respect to a desired value. In this case our desired acceleration is 0, making our error equivalent to our acceleration.
+
+
+Input : Acceleration value (magnitude, +/-)
+Output: Motor voltage
+
+error = input 				\\just for nomenclature
+
+pControl = Kp*error			\\Multiply by fixed constant
+iControl = Ki*integral(error)		\\Account for accumulated error
+dControl = Kd*derivative(error)		\\Adjust for future error
+
+
+rawOut = pControl + iControl + dControl \\Raw error adjustment output -> needs to be converted so motor can understand
+
+Output = rawOut * conversionFactor \\Useful output
+
+
+
