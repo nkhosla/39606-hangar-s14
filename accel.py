@@ -5,12 +5,12 @@ class Accel:
 	"""
 	A class to access the MPU 6050 acceloromoeter's X acceleration
 	"""
-
+    
 	def __init__(self):
-		# Power management registers
+        # Power management registers
         self.power_mgmt_1 = 0x6b
         self.power_mgmt_2 = 0x6c
-
+        
         # the 
         self.address = 0x68
         self.bus - smbus.SMbus(1)
