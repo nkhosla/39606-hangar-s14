@@ -2,5 +2,5 @@ from motorPWM import MotorDriverHandler
 
 handler = MotorDriverHandler(17, 18)
 
-
-handler.respondToPIDSuggestedAccel(5)
+while True:
+    handler.respondToPIDSuggestedAccel(5)
