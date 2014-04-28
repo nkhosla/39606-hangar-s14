@@ -39,7 +39,7 @@ class MotorDriverHandler:
 
 
     def respondToPIDSuggestedAccel(self, acc):
-        p = self.convertAccelerationToPercent(accel)
+        p = self.convertAccelerationToPercent(acc)
         self.setPercentOfTimeToBeOnState(p)
 
         if acc<0:
