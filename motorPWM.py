@@ -9,7 +9,7 @@ class MotorDriverHandler:
 
 
     def convertAccelerationToPercent(self, accel):
-        targetAccel = 0-accel 
+        
         scalingFactor = 10.0
 
         percent = targetAccel / scalingFactor
@@ -30,7 +30,7 @@ class MotorDriverHandler:
         self.servo.set_servo(self.gpioPin, timeOn)
 
 
-    def respondToAccel(self, acc):
+    def respondToPIDSuggestedAccel(self, acc):
         p = self.convertAccelerationToPercent(accel)
         self.setPercentOfTimeToBeOnState(p)
 
