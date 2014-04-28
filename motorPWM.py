@@ -1,11 +1,19 @@
 from RPIO import PWM
+import RPi.GPIO as gpio
 import math
 
 class MotorDriverHandler:
 
-    def __init__(self, gpioPin):
+    def __init__(self, PWMPin, dirPin):
         self.servo=PWM.Servo
-        self.gpioPin = gpioPin
+        self.gpioPin = PWMPin
+        self.dirPin = dirPin
+
+
+        GPIO.setmode(GPIO.BCM)
+
+        GPIO.setup(dirPin, GPIO.OUT)
+
 
 
     def convertAccelerationToPercent(self, accel):
@@ -34,6 +42,14 @@ class MotorDriverHandler:
         p = self.convertAccelerationToPercent(accel)
         self.setPercentOfTimeToBeOnState(p)
 
+        if acc<0:
+            GPIO.output(self.dirPin, False)
+
+        else:
+            GPIO.output(self.dirPin, True):
+            
+
 
     def stop(self):
         self.servo.stop_servo()
+
