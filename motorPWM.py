@@ -46,7 +46,7 @@ class MotorDriverHandler:
             GPIO.output(self.dirPin, False)
 
         else:
-            GPIO.output(self.dirPin, True):
+            GPIO.output(self.dirPin, True)
             
 
 
