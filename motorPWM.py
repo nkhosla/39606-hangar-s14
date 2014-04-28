@@ -20,7 +20,7 @@ class MotorDriverHandler:
         
         scalingFactor = 10.0
 
-        percent = targetAccel / scalingFactor
+        percent = accel / scalingFactor
 
         return percent
 
