@@ -25,7 +25,7 @@ class MotorDriverHandler:
         return percent
 
 
-    def setPercentOfTimeToBeOnState(percent):
+    def setPercentOfTimeToBeOnState(self,percent):
 
         # Use the default 20ms = 20000us cycle
         cycleLength = 20000.0
