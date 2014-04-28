@@ -1,5 +1,5 @@
 from RPIO import PWM
-import RPi.GPIO as gpio
+import RPi.GPIO as GPIO
 import math
 
 class MotorDriverHandler:
