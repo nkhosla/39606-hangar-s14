@@ -5,7 +5,7 @@ import math
 class MotorDriverHandler:
 
     def __init__(self, PWMPin, dirPin):
-        self.servo=PWM.Servo
+        self.servo=PWM.Servo()
         self.gpioPin = PWMPin
         self.dirPin = dirPin
 
