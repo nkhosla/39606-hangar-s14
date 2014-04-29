@@ -35,7 +35,7 @@ class MotorDriverHandler:
         timeOn = math.floor(timeOn_raw)
 
         # Set the servo
-        self.servo.set_servo(self.gpioPin, timeOn)
+        self.servo.set_servo(self.gpioPin, timeOn - (timeOn % 10))
 
 
     def respondToPIDSuggestedAccel(self, acc):
