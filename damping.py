@@ -13,7 +13,7 @@ sumReadings= 0
 trainingAccel = Accel(0)
 trainingAccel.wakeFromSleep()
 
-while time.time() < (startTimeForCalibration+10.0):
+while time.time() < (startTimeForCalibration+4.0):
     sumReadings += trainingAccel.getReadingX()
     numReadings += 1
 
@@ -26,7 +26,7 @@ accelorometer.wakeFromSleep()
 
 # Set up the PID control system
 
-pid = PID(P=15, I=0, D=0, Derivator=0, Integrator=0, Integrator_max=50, Integrator_min=-50)
+pid = PID(P=3, I=0, D=0, Derivator=0, Integrator=0, Integrator_max=50, Integrator_min=-50)
 
 
 # Set up the motor driver handler
