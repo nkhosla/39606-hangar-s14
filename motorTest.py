@@ -24,5 +24,8 @@ GPIO.output(18, True)
     GPIO.output(18, True)
 """
 
+while True:
+    print "hfv"
+
 
     
