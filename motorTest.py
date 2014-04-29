@@ -10,7 +10,7 @@ GPIO.setup(17, GPIO.OUT)
 
 svo = PWM.Servo()
 
-svo.set_servo(17, 18000.0 /20000.0)
+svo.set_servo(17, 18000.0)
 
 while True:
     GPIO.output(18, False)
