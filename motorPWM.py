@@ -17,13 +17,10 @@ class MotorDriverHandler:
 
 
 
-    def convertAccelerationToPercent(self, accel):
-        
-        scalingFactor = 10.0
+    def convertAccelerationToPercent(self, pidOutput):
 
 
-        percent = min(math.fabs(accel / scalingFactor), 1)
-
+        percent = min(pidOutput,1)
 
 
 
