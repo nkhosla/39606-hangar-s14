@@ -39,4 +39,4 @@ while True:
 
     t = mdHandler.convertAccelerationToPercent(pidOutput)
 
-    print r, t
+   # print r, t
