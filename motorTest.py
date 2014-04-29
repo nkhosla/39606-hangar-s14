@@ -26,8 +26,10 @@ svo.set_servo(17, 18000.0)
 
 while True:
     print "hfv"
+    svo.set_servo(17, 9000.0)
     GPIO.output(18, False)
     time.sleep(0.1)
+    svo.set_servo(17, 18000.0)
     GPIO.output(18,True)
     time.sleep(0.1)
 
