@@ -19,7 +19,8 @@ mdHandler = MotorDriverHandler(17,18)
 while True:
     r= accelorometer.getReadingX()
     pidOutput = pid.update(r)
-    #mdHandler.respondToPIDSuggestedAccel(pidOutput)
+    mdHandler.respondToPIDSuggestedAccel(pidOutput)
+    
     t = mdHandler.convertAccelerationToPercent(pidOutput)
 
     print r, t
