@@ -42,13 +42,16 @@ class MotorDriverHandler:
 
     def respondToPIDSuggestedAccel(self, acc):
         p = self.convertAccelerationToPercent(acc)
-        self.setPercentOfTimeToBeOnState(p)
+        
 
         if acc<0:
             GPIO.output(self.dirPin, False)
+            p = p/2 - ((p/2)%10)
 
         else:
             GPIO.output(self.dirPin, True)
+
+        self.setPercentOfTimeToBeOnState(p)
         
 
 
