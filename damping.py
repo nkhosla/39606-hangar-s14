@@ -10,7 +10,7 @@ accelorometer.wakeFromSleep()
 
 # Set up the PID control system
 
-pid = PID(P=2.50, I=0, D=0, Derivator=0, Integrator=0, Integrator_max=50, Integrator_min=-50)
+pid = PID(P=7.50, I=0, D=0, Derivator=0, Integrator=0, Integrator_max=50, Integrator_min=-50)
 
 
 # Set up the motor driver handler
@@ -20,7 +20,7 @@ while True:
     r= accelorometer.getReadingX()
     pidOutput = pid.update(r)
     mdHandler.respondToPIDSuggestedAccel(pidOutput)
-    
+
     t = mdHandler.convertAccelerationToPercent(pidOutput)
 
     print r, t
