@@ -20,5 +20,6 @@ while True:
     r= accelorometer.getReadingX()
     pidOutput = pid.update(r)
     #mdHandler.respondToPIDSuggestedAccel(pidOutput)
+    t = mdHandler.convertAccelerationToPercent(pidOutput)
 
-    print r, pid.update(r)
+    print r, t
