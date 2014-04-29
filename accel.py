@@ -5,13 +5,15 @@ class Accel:
     """
     A class to access the MPU 6050 acceloromoeter's X acceleration
     """
-    def __init__(self):
+    def __init__(self, meanAccel):
         # Power management registers
         self.power_mgmt_1 = 0x6b
         self.power_mgmt_2 = 0x6c
         # the 
         self.address = 0x68
         self.bus = smbus.SMBus(1)
+
+        self.meanAccel = meanAccel
 
     def wakeFromSleep(self):
         # Now wake the 6050 up as it starts in sleep mode
@@ -41,5 +43,9 @@ class Accel:
         xAccel_raw = self.read_word_2c(0x3b)
         xAccel = xAccel_raw / 16384.0
 
+        xAccelCorrected = xAccel - self.meanAccel
 
-        return xAccel
+
+
+
+        return xAccelCorrected

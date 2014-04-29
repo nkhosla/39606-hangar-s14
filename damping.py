@@ -4,8 +4,21 @@ from accel import Accel
 from PID import PID
 from motorPWM import MotorDriverHandler
 
+# train the accelorometer
+startTimeForCalibration = time.time()
+sumReadings= 0
+
+trainingAccel = Accel(0)
+trainingAccel.wakeFromSleep()
+
+while time.time() < (startTimeForCalibration+10.0):
+    sumReadings += trainingAccel.getReadingX()
+
+
+meanReading = 0 - (sumReadings / numReadings)
+
 # Set up the accelorometer
-accelorometer = Accel()
+accelorometer = Accel(meanReading)
 accelorometer.wakeFromSleep()
 
 # Set up the PID control system
