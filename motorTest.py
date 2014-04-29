@@ -14,6 +14,7 @@ svo.set_servo(17, 18000.0)
 
 while True:
     GPIO.output(18, False)
+    print "switch"
     time.sleep(0.5)
     GPIO.output(18, True)
 
