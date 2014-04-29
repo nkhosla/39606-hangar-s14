@@ -18,7 +18,7 @@ mdHandler = MotorDriverHandler(17,18)
 
 while True:
     r= accelorometer.getReadingX()
-    pidOutput = pid.update()
+    pidOutput = pid.update(r)
     #mdHandler.respondToPIDSuggestedAccel(pidOutput)
 
     print r, pid.update(r)
