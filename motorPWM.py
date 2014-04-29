@@ -20,7 +20,7 @@ class MotorDriverHandler:
     def convertAccelerationToPercent(self, pidOutput):
 
 
-        percent = min(math.fabs(pidOutput),1)
+        percent = min(math.fabs(pidOutput),0.999)
 
         return percent
 
