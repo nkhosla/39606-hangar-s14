@@ -22,7 +22,7 @@ class MotorDriverHandler:
         scalingFactor = 10.0
 
 
-        percent = min(math.abs(accel / scalingFactor), 1)
+        percent = min(math.fabs(accel / scalingFactor), 1)
 
 
 
