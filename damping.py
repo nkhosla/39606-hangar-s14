@@ -7,6 +7,7 @@ import time
 
 # train the accelorometer
 startTimeForCalibration = time.time()
+numReadings = 0
 sumReadings= 0
 
 trainingAccel = Accel(0)
@@ -14,6 +15,7 @@ trainingAccel.wakeFromSleep()
 
 while time.time() < (startTimeForCalibration+10.0):
     sumReadings += trainingAccel.getReadingX()
+    numReadings += 1
 
 
 meanReading = 0 - (sumReadings / numReadings)
