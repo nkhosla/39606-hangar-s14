@@ -16,11 +16,16 @@ class MotorDriverHandler:
 
 
 
+
     def convertAccelerationToPercent(self, accel):
         
         scalingFactor = 10.0
 
-        percent = accel / scalingFactor
+
+        percent = min(math.abs(accel / scalingFactor), 1)
+
+
+
 
         return percent
 
@@ -47,7 +52,7 @@ class MotorDriverHandler:
 
         else:
             GPIO.output(self.dirPin, True)
-            
+        
 
 
     def stop(self):
