@@ -6,7 +6,7 @@ import RPi.GPIO as GPIO
 handler = MotorDriverHandler(17, 18)
 
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(17, GPIO.OUT)
+GPIO.setup(18, GPIO.OUT)
 
 svo = PWM.Servo()
 
