@@ -34,7 +34,6 @@ class MotorDriverHandler:
         # round down so no decimals
         timeOn = math.floor(timeOn_raw)
 
-        print timeOn - (timeOn%10)
 
         # Set the servo
         self.servo.set_servo(self.gpioPin, timeOn - (timeOn % 10))
