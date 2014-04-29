@@ -3,6 +3,7 @@
 from accel import Accel
 from PID import PID
 from motorPWM import MotorDriverHandler
+import time
 
 # train the accelorometer
 startTimeForCalibration = time.time()
