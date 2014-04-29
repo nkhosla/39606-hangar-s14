@@ -12,8 +12,8 @@ svo = PWM.Servo()
 
 svo.set_servo(17, 18000.0)
 
-while True:
-    GPIO.output(18, True)
+#while True:
+GPIO.output(18, True)
 
     """
     svo.set_servo(17, 18000.0)
