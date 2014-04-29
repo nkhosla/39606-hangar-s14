@@ -28,7 +28,7 @@ while True:
     print "hfv"
     GPIO.output(18, False)
     time.sleep(0.1)
-    GPIO.output(18.True)
+    GPIO.output(18,True)
     time.sleep(0.1)
 
 
